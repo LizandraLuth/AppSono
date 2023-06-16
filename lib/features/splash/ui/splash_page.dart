@@ -1,9 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:rotina_sono/features/onboarding/ui/onboarding_page.dart';
+import 'package:rotina_sono/features/navigation/ui/main_page.dart';
 
-import '../../home/ui/homes_page.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -19,7 +18,7 @@ class _SplashPageState extends State<SplashPage> {
         Duration(milliseconds: 3),
             () =>
             Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (BuildContext context) => HomePage())));
+                builder: (BuildContext context) => MainPage())));
 
     return Scaffold(
         // appBar: AppBar(
