@@ -1,15 +1,26 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
 
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+import 'package:flutter/material.dart';
+import 'package:rotina_sono/features/onboarding/ui/onboarding_page.dart';
+
+import '../../home/ui/homes_page.dart';
+
+class SplashPage extends StatefulWidget {
+  const SplashPage({Key? key}) : super(key: key);
 
   @override
-  State<Home> createState() => _HomeState();
+  State<SplashPage> createState() => _SplashPageState();
 }
 
-class _HomeState extends State<Home> {
+class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
+    Timer(
+        Duration(milliseconds: 3),
+            () =>
+            Navigator.of(context).pushReplacement(MaterialPageRoute(
+                builder: (BuildContext context) => HomePage())));
+
     return Scaffold(
         // appBar: AppBar(
         //   title: Text('Rotina de sono'),

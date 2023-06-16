@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:rotina_sono/ui/home.dart';
+
+import 'features/splash/ui/splash_page.dart';
+
 
 void main() => runApp(
   new MaterialApp(
-    home: Home(),
+    home: SplashPage(),
   //  title: 'Rotina de sono',
 
   )
