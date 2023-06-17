@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rotina_sono/config/utils/widget/app_bar_custom_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,15 +11,13 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       appBar: PreferredSize(
-          child: Padding(
-              padding: EdgeInsets.only(top: 90, bottom: 30, left: 50),
-              child: Text(
-                'BEM \nVINDO(A)!',
-                style: TextStyle(fontFamily: 'Montserrat', fontSize: 36),
-              )),
-          preferredSize: Size(30, 250)),
+        preferredSize: Size.fromHeight(250),
+        child: AppBarCustom(
+          title: 'BEM \nVINDO(A)!',
+        ),
+      ),
       body: Center(
           child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 50),
