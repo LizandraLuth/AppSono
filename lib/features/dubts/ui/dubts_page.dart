@@ -17,7 +17,7 @@ class _DubtsPage extends State<DubtsPage> {
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(250),
         child: AppBarCustom(
-          title: 'Dúvidas',
+          title: 'DÚVIDAS',
         ),
       ),
     );
