@@ -18,11 +18,11 @@ class _MarcosDesenvolvimentoPageState extends State<MarcosDesenvolvimentoPage> {
           title: 'O que são \nmarcos de desenvolvimento??',
         ),
       ),
-      body: _bodyBuild(),
+      body: SingleChildScrollView(child: _bodyBuild()),
     );
   }
   _bodyBuild(){
-    return const Padding(padding: EdgeInsets.symmetric(horizontal: 50),
+    return Padding(padding: EdgeInsets.symmetric(horizontal: 50),
       child: Column(
         children: [
           Text('Os marcos do desenvolvimento são um conjunto de habilidades que a maioria das crianças atinge em uma determinada idade. Os marcos ajudam pais, médicos e professores a perceber quando o desenvolvimento da criança não está acompanhado o esperado.',
@@ -31,7 +31,7 @@ class _MarcosDesenvolvimentoPageState extends State<MarcosDesenvolvimentoPage> {
             ),),SizedBox(height: 30),
           Text('Tabela de marcos de desenvolvimento', style: TextStyle(
               fontFamily: 'Montserrat', fontSize: 25, color: Colors.black
-          ),),SizedBox(height: 30),
+          ),),SizedBox(height: 30),Image.asset('assets/images/tabelamarcos.jpg'),
         ],
       ),);
 
