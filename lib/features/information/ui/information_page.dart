@@ -5,6 +5,7 @@ import 'package:rotina_sono/features/information/ui/rotina_sono_page.dart';
 import 'package:rotina_sono/features/information/ui/vestir_bebe_page.dart';
 
 import '../../../config/utils/widget/app_bar_custom_widget.dart';
+import '../../../config/utils/widget/page_custom_widget.dart';
 
 class InformationPage extends StatefulWidget {
   const InformationPage({super.key});
@@ -23,7 +24,7 @@ class _InformationPageState extends State<InformationPage> {
           title: 'INFORMAÇÕES',
         ),
       ),
-      body: _bodyBuild(),
+      body: PageCustomWidget(widgets: _bodyBuild()),
     );
   }
 
@@ -37,8 +38,10 @@ class _InformationPageState extends State<InformationPage> {
               'Aprenda tudo o que vocë precisa saber sobre o sono do seu bebê.',
           colorText: ColorsUtil.blueFour,
           function: () async {
-            Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (BuildContext context) => const RotinaSonoPage()));
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const RotinaSonoPage()),
+            );
           }),
       _card(
           title: 'Marcos de desenvolvimento',
@@ -47,8 +50,11 @@ class _InformationPageState extends State<InformationPage> {
           description: 'Saiba em que fase de desenvolvimento seu filho está.',
           colorText: ColorsUtil.purpleFour,
           function: () async {
-            Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (BuildContext context) => const MarcosDesenvolvimentoPage()));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                builder: (BuildContext context) =>
+                    const MarcosDesenvolvimentoPage()));
           }),
       _card(
           title: 'Como vestir seu bebê?',
@@ -58,7 +64,9 @@ class _InformationPageState extends State<InformationPage> {
               'Veja como vestir o seu filho de acordo com a temperatura.',
           colorText: ColorsUtil.blueFour,
           function: () async {
-            Navigator.of(context).pushReplacement(MaterialPageRoute(
+            Navigator.push(
+                context,
+                MaterialPageRoute(
                 builder: (BuildContext context) => const VestirBebePage()));
           })
     ]);

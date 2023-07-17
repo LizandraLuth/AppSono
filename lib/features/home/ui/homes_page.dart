@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rotina_sono/config/utils/widget/app_bar_custom_widget.dart';
+import 'package:rotina_sono/config/utils/widget/page_custom_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,25 +19,27 @@ class _HomePageState extends State<HomePage> {
           title: 'BEM \nVINDO(A)!',
         ),
       ),
-      body: Center(
-          child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 50),
-              child: Column(
-                children: [
-                  Text(
-                    'É muito bom ter você por aqui! Sabia que o sono do bebê é essencial para o seu desenvolvimento? \nTer uma rotina de sono é de grande importancia para toda a família.',
-                    maxLines: 10,
-                    style: TextStyle(fontFamily: 'Lato', fontSize: 20, color: Colors.grey),
-                  ),
-            SizedBox(height: 30),
+      body: PageCustomWidget(
+          widgets: Center(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 50),
+          child: Column(
+            children: [
+              Text(
+                'É muito bom ter você por aqui! Sabia que o sono do bebê é essencial para o seu desenvolvimento? \nTer uma rotina de sono é de grande importancia para toda a família.',
+                maxLines: 10,
+                style: TextStyle(
+                    fontFamily: 'Lato', fontSize: 20, color: Colors.grey),
+              ),
+              SizedBox(height: 30),
               Text(
                 'Novidades da semana:',
                 style: TextStyle(fontFamily: 'Montserrat', fontSize: 30),
               ),
-                ],
-              ), ),
-      ),
-
+            ],
+          ),
+        ),
+      )),
     );
   }
 }

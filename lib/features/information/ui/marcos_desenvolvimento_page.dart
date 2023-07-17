@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rotina_sono/config/utils/widget/page_custom_widget.dart';
 
 import '../../../config/utils/widget/app_bar_custom_widget.dart';
 class MarcosDesenvolvimentoPage extends StatefulWidget {
@@ -18,7 +19,7 @@ class _MarcosDesenvolvimentoPageState extends State<MarcosDesenvolvimentoPage> {
           title: 'O que são \nmarcos de desenvolvimento??',
         ),
       ),
-      body: SingleChildScrollView(child: _bodyBuild()),
+      body: PageCustomWidget(widgets: SingleChildScrollView(child: _bodyBuild()),),
     );
   }
   _bodyBuild(){

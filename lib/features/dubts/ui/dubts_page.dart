@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:rotina_sono/config/utils/widget/page_custom_widget.dart';
 
 import '../../../config/utils/widget/app_bar_custom_widget.dart';
 import 'package:rotina_sono/config/utils/colors_utils.dart';
@@ -20,7 +21,7 @@ class _DubtsPage extends State<DubtsPage> {
           title: 'DÚVIDAS',
         ),
       ),
-      body: SingleChildScrollView(child: _bodyBuild()),
+      body: PageCustomWidget(widgets: SingleChildScrollView(child: _bodyBuild()),),
     );
   }
 
@@ -89,21 +90,21 @@ class _DubtsPage extends State<DubtsPage> {
       required String description,
       }) {
     return Padding(
-        padding: EdgeInsets.symmetric(horizontal: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 32),
         child: Column(
           children: [
             Text(
               title,
-              style: TextStyle(
+              style: const TextStyle(
                   fontFamily: 'Montserrat', fontSize: 20, color: Colors.black),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               description,
-              style: TextStyle(
-                  fontFamily: 'Lato', fontSize: 15, color: Colors.grey),
+              style: const TextStyle(
+                  fontFamily: 'Lato', fontSize: 15, color: ColorsUtil.grey),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 28),
           ],
         ));
   }
