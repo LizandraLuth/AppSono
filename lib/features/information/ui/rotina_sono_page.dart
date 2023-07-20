@@ -45,7 +45,7 @@ class _RotinaSonoPageState extends State<RotinaSonoPage> {
     _widgetsCarousel.add(_card(
       title: 'Ambiente de sono',
       description:
-          'Um quarto escuro e silencioso ajuda a minimizar estímulos distrativos, permitindo que o bebê relaxe e adormeça mais facilmente, um ambiente propício ao sono do bebê ajuda a estabelecer um padrão de sono saudável e a promover um desenvolvimento adequado.',
+          'Um quarto escuro e silencioso ajuda a minimizar estímulos distrativos, permitindo que o bebê relaxe e adormeça mais facilmente, um ambiente propício ajuda a estabelecer um padrão de sono saudável.',
     ));
     _widgetsCarousel.add(_card(
       title: 'Ruído branco',
@@ -101,13 +101,16 @@ class _RotinaSonoPageState extends State<RotinaSonoPage> {
                 TextStyle(fontFamily: 'Lato', fontSize: 20, color: Colors.grey),
           ),
           const SizedBox(height: 30),
-          CarouselSlider(  carouselController: _carouselController,
+          CarouselSlider(
+            carouselController: _carouselController,
             items: _widgetsCarousel,
-            options: CarouselOptions(onPageChanged: (index, reason) {
-              setState(() {
-                _currentIndex = index;
-              });
-            }),
+            options: CarouselOptions(
+              onPageChanged: (index, reason) {
+                setState(() {
+                  _currentIndex = index;
+                });
+              },
+            ),
           ),
           DotsIndicator(
             dotsCount: _widgetsCarousel.length,
@@ -116,7 +119,8 @@ class _RotinaSonoPageState extends State<RotinaSonoPage> {
               color: Colors.grey,
               activeColor: ColorsUtil.bluetwo,
             ),
-          ),          const SizedBox(height: 32),
+          ),
+          const SizedBox(height: 32),
         ]));
   }
 
@@ -125,23 +129,29 @@ class _RotinaSonoPageState extends State<RotinaSonoPage> {
     required String description,
   }) {
     return Container(
-      color: Colors.white,
-
-        padding: const EdgeInsets.all(32),
+        decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border.all(color: ColorsUtil.purpleFour),
+            borderRadius: const BorderRadius.all(Radius.circular(12), )),
+        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 28),
+        margin: const EdgeInsets.all(5),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
               title,
               style: const TextStyle(
-                  fontFamily: 'Montserrat', fontSize: 20, color: Colors.black),
+                  fontFamily: 'Montserrat', fontSize: 18, color: Colors.black),
             ),
             const SizedBox(height: 10),
             Text(
               description,
               style: const TextStyle(
-                  fontFamily: 'Lato', fontSize: 15, color: ColorsUtil.grey),
+                  fontFamily: 'Lato',
+                  fontSize: 12,
+                  color: ColorsUtil.grey,
+                  fontStyle: FontStyle.italic),
             ),
-            const SizedBox(height: 28),
           ],
         ));
   }

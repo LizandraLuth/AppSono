@@ -33,6 +33,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   carousel_slider: ^4.2.1
   dots_indicator: ^3.0.0
+  timeline_tile: ^2.0.0
 
 dev_dependencies:
   flutter_test:
